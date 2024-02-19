@@ -9,7 +9,7 @@ header {
 
 .logo {
     margin-left: 20px;
-    background-image: url('images/imag.jpg');
+    background-image: url('/web_static/images/HBTN_logo.png');
     height: 40px;
     background-size: contain;
     background-repeat: no-repeat;
