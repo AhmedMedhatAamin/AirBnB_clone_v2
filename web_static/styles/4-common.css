@@ -3,7 +3,7 @@ body {
     padding: 0;
     color: #484848;
     font-size: 14px;
-    font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif; 
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .container {
@@ -25,7 +25,7 @@ body {
     filter: alpha(opacity=100);
 }
 
-button:hover {
+.button:hover {
     opacity: 0.9;
-    filter: alpha(opacity=100);
+    filter: alpha(opacity=90);
 }
