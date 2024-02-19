@@ -9,9 +9,9 @@ header {
 
 .logo {
     margin-left: 20px;
-    background-image: url('/web_static/images/HBTN_logo.png'); /* Update the path to your logo */
+    background-image: url('/web_static/images/HBTN_logo.png');
     height: 40px;
-    width: 100px; /* Set a width for the logo */
+    width: 100px;
     background-size: contain;
     background-repeat: no-repeat;
 }
