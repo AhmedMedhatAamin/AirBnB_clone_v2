@@ -6,8 +6,10 @@
     border-radius: 4px;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
+    margin: 0 17%;
 }
+
 
 button {
     font-size: 18px;
