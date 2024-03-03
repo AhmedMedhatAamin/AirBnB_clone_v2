@@ -29,14 +29,14 @@ button:hover {
     filter: alpha(opacity=100);
 }
 
-.locations,
+.States,
 .amentities {
     height: 100%;
     width: 25%;
     box-sizing: border-box;
 }
 
-.locations {
+.States {
     border-right: 1px solid #DDDDDD;
     padding-right: 5%;
 }
