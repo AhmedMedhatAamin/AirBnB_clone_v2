@@ -19,5 +19,17 @@ article {
     border-radius: 4px;
     font-size: 30px;
     text-align: center;
+    display: fl;
     
+}
+.photo-style {
+    background-image: url(/web_static/images/icon_bath.png), 
+                      url(/web_static/images/icon_bed.png), 
+                      url(/web_static/images/icon_group.png);
+    background-size: contain; /* Adjust as needed */
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 100%;
+    background-position: top;
+    background-color: #FFFFFF;
 }
