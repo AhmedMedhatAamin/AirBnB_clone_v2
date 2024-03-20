@@ -37,16 +37,56 @@ class HBNBCommand(cmd.Cmd):
         pass
     
     def do_create(self, arg):
-        """Creates a new instance of BaseModel,
-        saves it (to the JSON file) and prints the id"""
-        if not arg:
-            print("** class name missing **")
-        elif arg not in self.classes :
-            print("** class doesn't exist **")
+    """
+    Creates a new instance of a specified class
+    Args:
+        arg (str): Class name and parameters in the format "<Class name> <param 1> <param 2> ..."
+    """
+    if not arg:
+        print("** class name missing **")
+        return
+
+    args = arg.split()
+    class_name = args[0]
+    if class_name not in self.classes:
+        print("** class doesn't exist **")
+        return
+
+    # Remove the class name from the arguments
+    args = args[1:]
+
+    # Parse parameters
+    params = {}
+    for arg in args:
+        key_value = arg.split('=')
+        if len(key_value) != 2:
+            continue
+        key = key_value[0]
+        value = key_value[1]
+
+        # Handle value syntax
+        if value.startswith('"') and value.endswith('"'):
+            value = value[1:-1]  # Remove double quotes
+            value = value.replace('_', ' ')  # Replace underscores with spaces
+            value = value.replace('\\"', '"')  # Unescape escaped double quotes
+        elif '.' in value:
+            try:
+                value = float(value)
+            except ValueError:
+                continue
         else:
-            new = eval(arg)()
-            new.save()
-            print(new.id)
+            try:
+                value = int(value)
+            except ValueError:
+                continue
+
+        params[key] = value
+
+    # Create object with parsed parameters
+    new_obj = eval(class_name)(**params)
+    new_obj.save()
+    print(new_obj.id)
+
             
     def do_show(self, arg):
         """show a new instance of BaseModel,
