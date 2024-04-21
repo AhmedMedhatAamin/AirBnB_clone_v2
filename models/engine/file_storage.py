@@ -21,6 +21,7 @@ class FileStorage:
             'Place': import_module('models.place').Place,
             'Review': import_module('models.review').Review
         }
+    def close
 
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
@@ -65,5 +66,5 @@ class FileStorage:
                     self.all()[key] = classes[val['__class__']](**val)
 
     def close(self):
-        """Closes the storage engine."""
+        """Closes """
         self.reload()
